@@ -21,7 +21,7 @@ public class Collectable : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            var character = collision.GetComponent<CharacterMovement>().collectables++;
+            var character = collision.GetComponent<Player>().collectables++;
             
             Destroy(this.gameObject);
         }

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] CharacterMovement characterMovement;
+    [SerializeField] Player player;
     [SerializeField] float speed;
+    [SerializeField] public int health;
 
     float vel;
 
@@ -18,6 +19,16 @@ public class EnemyMovement : MonoBehaviour
     {
         vel = speed * Time.deltaTime;
 
-        transform.position = Vector2.MoveTowards(transform.position, characterMovement.transform.position, vel);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, vel);
+
+        if(health <= 0) Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            player.health -= 10;
+        }
     }
 }

@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] float speed = 3;
 
+    [HideInInspector] public int collectables = 0;
+    [HideInInspector] public int health = 100;
+
     Rigidbody2D rb;
     Vector2 vel = Vector2.zero;
-    public int collectables = 0;
 
     void Start()
     {
