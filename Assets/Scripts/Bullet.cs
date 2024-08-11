@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float speed;
-
-    [HideInInspector] public Vector2 target = Vector2.zero;
-    float vel;
+    [SerializeField] float timer = 5;
 
     void Start()
     {
-        
+
+
     }
 
     void Update()
     {
-        vel = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, target, vel);
+        timer -= Time.deltaTime;
+        if(timer < 0 ) Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
