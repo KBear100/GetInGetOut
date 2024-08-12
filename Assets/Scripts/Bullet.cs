@@ -24,5 +24,7 @@ public class Bullet : MonoBehaviour
         {
             collision.GetComponent<EnemyMovement>().health -= 10;
         }
+
+        if(collision.tag != "Player") Destroy(gameObject);
     }
 }
