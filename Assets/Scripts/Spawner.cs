@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject coin;
-    [SerializeField] float spawnTimer;
+    [SerializeField] public GameObject coin;
+    [SerializeField] public float spawnTimer;
     [Header("Coords")]
     [SerializeField] float xMin;
     [SerializeField] float xMax;

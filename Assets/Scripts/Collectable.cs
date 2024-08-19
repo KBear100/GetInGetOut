@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    [SerializeField] float timer;
+    [SerializeField] public float timer;
 
     void Start()
     {
