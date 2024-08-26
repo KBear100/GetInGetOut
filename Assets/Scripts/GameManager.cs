@@ -23,18 +23,17 @@ public class GameManager : MonoBehaviour
 
         if(timer <= 0)
         {
-            timer = roundLength;
-            if(coinSpawner1.spawnTimer != 1.0f)
+            if(coinSpawner1.spawnTimer != 1.5f)
             {
                 coinSpawner1.spawnTimer -= 0.5f;
                 coinSpawner2.spawnTimer -= 0.5f;
                 coinSpawner1.coin.GetComponent<Collectable>().timer -= 0.3f;
                 coinSpawner2.coin.GetComponent<Collectable>().timer -= 0.3f;
             }
-            if(enemySpawner1.spawnTimer != 3.0f)
+            if(enemySpawner1.spawnTimer != 2.0f)
             {
-                enemySpawner1.spawnTimer -= 0.5f;
-                enemySpawner2.spawnTimer -= 0.5f;
+                enemySpawner1.spawnTimer -= 1;
+                enemySpawner2.spawnTimer -= 1;
             }
             timer = roundLength;
         }

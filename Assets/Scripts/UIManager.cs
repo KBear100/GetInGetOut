@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] TMP_Text collectablesCountText;
     [SerializeField] Slider healthBar;
+    [Header("Sounds")]
+    [SerializeField] AudioSource coinSound;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        if(!collectablesCountText.text.Contains(player.collectables.ToString())) coinSound.Play();
         collectablesCountText.text = "Treasure: " + player.collectables.ToString();
         healthBar.value = player.health;
     }
